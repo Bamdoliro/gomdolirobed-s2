@@ -43,6 +43,7 @@ public class Library {
         return null;
     }
 
+    //대출자의 이름을 출력하는 메소드
     public void printBorrower(String bookname) {
         if(bamdol.checkBorrow(bookname)) System.out.print(bamdol.getName() + ",");
         if(iro.checkBorrow(bookname)) System.out.print(iro.getName() + ",");
