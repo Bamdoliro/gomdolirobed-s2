@@ -15,6 +15,8 @@ public class Main {
             User bamdol = new User("이밤돌");
         // 도서관 이용자 김이로를 생성합니다.
             User iro = new User("iro");
+        //도서관에 이용자를 추가
+            library.setUsers(bamdol, iro);
         // TODO-3 도서 추가
         // 도서관에 모던 자바 인 액션 저자 라울-게이브리얼-우르마 ISBN 9791162242025 이 한권 더 들어옵니다.
             Book modern = library.findBook("모던 자바 인 액션");

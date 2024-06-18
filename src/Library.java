@@ -4,6 +4,14 @@ public class Library {
     private Book book2;
     private Book book3;
 
+    private User bamdol;
+    private User iro;
+
+    public void setUsers(User bamdol, User iro) {
+        this.bamdol = bamdol;
+        this.iro = iro;
+    }
+
     //도서관 제목을 받음
     public Library(String libraryName) {
         this.libraryName = libraryName;
@@ -42,17 +50,23 @@ public class Library {
         System.out.print(book1.getAuthor() + ",");
         System.out.print(book1.getIsbn() + ",");
         if(book1.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
+        if(bamdol.borrowUser("자바의 정석")) System.out.print(bamdol.getName() + ",");
+        if(iro.borrowUser("자바의 정석")) System.out.print(iro.getName() + ",");
         else System.out.println("대출이 불가능합니다.");
 
         System.out.print(book2.getBookname() + ",");
         System.out.print(book2.getAuthor() + ",");
         System.out.print(book2.getIsbn() + ",");
+        if(bamdol.borrowUser("객체지향의 사실과 오해")) System.out.print(bamdol.getName() + ",");
+        if(iro.borrowUser("객체지향의 사실과 오해")) System.out.print(iro.getName() + ",");
         if(book2.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
         else System.out.println("대출이 불가능합니다.");
 
         System.out.print(book3.getBookname() + ",");
         System.out.print(book3.getAuthor() + ",");
         System.out.print(book3.getIsbn() + ",");
+        if(bamdol.borrowUser("모던 자바 인 액션")) System.out.print(bamdol.getName() + ",");
+        if(iro.borrowUser("모던 자바 인 액션")) System.out.print(iro.getName() + ",");
         if(book3.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
         else System.out.println("대출이 불가능합니다.");
     }

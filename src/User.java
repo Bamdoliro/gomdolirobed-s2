@@ -61,4 +61,8 @@ public class User {
             System.out.println(name + ":" + borrow_book2.getBookname());
         }
     }
+    public boolean borrowUser(String bookname) {
+        if(borrow_book.equals(bookname) || borrow_book2.equals(bookname)) return true;
+        return false;
+    }
 }
