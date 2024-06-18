@@ -67,7 +67,10 @@ public class Main {
 
         // TODO-12 전체 조회
         // 도서관에서 도서 목록을 조회합니다.
-            library.printBook();
+            //대출이 불가능한 책 조회
+            library.printUnavailableBook();
+            //대출이 가능한 책 조회
+            library.printavailableBook();
         // 이밤돌이 본인이 대출한 도서를 조회합니다.
             bamdol.printBorrowBook();
         // 김이로가 본인이 대출한 도서를 조회합니다.
