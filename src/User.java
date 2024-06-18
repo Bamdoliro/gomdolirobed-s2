@@ -61,8 +61,9 @@ public class User {
             System.out.println(name + ":" + borrow_book2.getBookname());
         }
     }
-    public boolean borrowUser(String bookname) {
-        if(borrow_book.equals(bookname) || borrow_book2.equals(bookname)) return true;
-        return false;
+
+    //대출 여부 확인
+    public boolean checkBorrow(String bookname) {
+        return (borrow_book != null && borrow_book.getBookname().equals(bookname)) || (borrow_book2 != null && borrow_book2.getBookname().equals(bookname));
     }
 }

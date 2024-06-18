@@ -43,30 +43,31 @@ public class Library {
         return null;
     }
 
+    public void printBorrower(String bookname) {
+        if(bamdol.checkBorrow(bookname)) System.out.print(bamdol.getName() + ",");
+        if(iro.checkBorrow(bookname)) System.out.print(iro.getName() + ",");
+    }
     //도서관에 있는 책 모두 조회, abailablebooks가 0보다 크다면 대출 가능한 책이 있으므로 대출 가능합니다를 출력
     //아니라면 대출이 불가능합니다. 라는 메세지를 출력
     public void printBook() {
         System.out.print(book1.getBookname() + ",");
         System.out.print(book1.getAuthor() + ",");
         System.out.print(book1.getIsbn() + ",");
+        printBorrower("자바의 정석");
         if(book1.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
-        if(bamdol.borrowUser("자바의 정석")) System.out.print(bamdol.getName() + ",");
-        if(iro.borrowUser("자바의 정석")) System.out.print(iro.getName() + ",");
         else System.out.println("대출이 불가능합니다.");
 
         System.out.print(book2.getBookname() + ",");
         System.out.print(book2.getAuthor() + ",");
         System.out.print(book2.getIsbn() + ",");
-        if(bamdol.borrowUser("객체지향의 사실과 오해")) System.out.print(bamdol.getName() + ",");
-        if(iro.borrowUser("객체지향의 사실과 오해")) System.out.print(iro.getName() + ",");
+        printBorrower("객체지향의 사실과 오해");
         if(book2.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
         else System.out.println("대출이 불가능합니다.");
 
         System.out.print(book3.getBookname() + ",");
         System.out.print(book3.getAuthor() + ",");
         System.out.print(book3.getIsbn() + ",");
-        if(bamdol.borrowUser("모던 자바 인 액션")) System.out.print(bamdol.getName() + ",");
-        if(iro.borrowUser("모던 자바 인 액션")) System.out.print(iro.getName() + ",");
+        printBorrower("모던 자바 인 액션");
         if(book3.getAvailablebooks() > 0) System.out.println("대출 가능합니다.");
         else System.out.println("대출이 불가능합니다.");
     }
